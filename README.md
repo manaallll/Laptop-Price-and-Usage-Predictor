@@ -32,12 +32,8 @@ Two distinct machine learning models were trained and implemented:
 
 ### Input Features
 
-The models utilize a comprehensive set of features to ensure accurate predictions:
-
-*   **General:** Company, Type Name, Inches, RAM, Operating System, Weight
-*   **Display:** Screen Resolution, Touchscreen, IPS Panel, Retina Display
-*   **Performance:** CPU Brand, Model, Clock Speed, GPU Company, GPU Model
-*   **Storage:** Primary & Secondary Storage (Size and Type)
+The models utilize a comprehensive set of features to ensure accurate predictions, including:
+`Company`, `Type Name`, `Inches`, `RAM`, `Operating System`, `Weight`, `Screen Resolution`, `Touchscreen`, `IPS Panel`, `Retina Display`, `CPU Brand`, `Model`, `Clock Speed`, `Primary & Secondary Storage`, `GPU Company` and `Model`.
 
 ### Data Preprocessing
 
@@ -63,7 +59,6 @@ The final models are deployed in a Streamlit application that allows for seamles
 ## 5. Conclusion
 
 This system successfully combines regression and classification to provide valuable pricing insights and practical usage guidance. The use of **Random Forest**, a powerful ensemble learning method, ensures model accuracy and reliability, while the Streamlit interface makes the complex analysis accessible and user-friendly.
-
 ## How to Run
 
 1.  Clone the repository:
