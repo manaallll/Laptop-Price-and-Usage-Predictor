@@ -1,29 +1,68 @@
-# Laptop Price and Usage Predictor
+# Machine Learning Report: Laptop Price Estimation & Use-Case Classification
 
-This project delivers a dual-function analysis of laptop specifications through two distinct machine learning models. A regression model forecasts market price, while a classification model recommends the ideal usage type. The development process covered end-to-end data preprocessing, including label encoding and feature engineering, and culminated in an interactive web application deployed with Streamlit.
+## 1. Project Overview
 
-<!-- You can add a screenshot of your app working here! -->
-<!-- ![App Screenshot](app_screenshot.png) -->
+This project delivers a dual-function analysis of laptop specifications. It predicts the market price (a regression task) and recommends the ideal usage environment, such as Programming, School/University, or Business (a classification task). The entire system is deployed as a user-friendly web application using the **Streamlit** framework.
 
-##  Key Features
+---
 
--   **Price Prediction:** Utilizes a Random Forest Regressor to estimate the price of a laptop based on its hardware specifications.
--   **Use-Case Classification:** Employs a classification model to categorize a laptop for its optimal environment (e.g., Programming, Gaming, Business).
--   **Intelligent Validation:** Includes a custom logic layer to provide warnings about unusual or inconsistent specification combinations.
--   **Interactive UI:** A user-friendly interface built with Streamlit allows for easy input and clear presentation of results.
+## 2. Models & Methodology
 
-## Technologies & Skills
+Two distinct machine learning models were trained and implemented:
 
--   **Language:** Python
--   **Data Science Stack:** Pandas, NumPy, Scikit-Learn, Matplotlib
--   **Machine Learning:** Regression, Classification, Ensemble Models (Random Forest), Feature Engineering
--   **Deployment & Tools:** Streamlit, Jupyter Notebook, Git, Virtual Environments
+### a. Regression Model: Laptop Price Prediction
 
-## Performance
+*   **Model Used:** `Random Forest Regressor`
+*   **Objective:** To predict the `Price (in Euros)` based on hardware specifications.
+*   **Evaluation Metrics:** Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² Score.
 
-The models were trained on a dataset of over 1100 laptops and achieved strong performance metrics:
--   **Classification Accuracy:** 90%
--   **Regression R² Score:** 86%
+### b. Classification Model: Laptop Use-Case Prediction
+
+*   **Model Used:** `Random Forest Classifier`
+*   **Objective:** To classify a laptop into a predefined usage category.
+*   **Target Classes:**
+    *   `0`: Programming
+    *   `1`: School/University
+    *   `2`: Business
+*   **Evaluation Metrics:** Accuracy, Precision, Recall, F1-Score, and Confusion Matrix.
+
+---
+
+## 3. Data & Features
+
+### Input Features
+
+The models utilize a comprehensive set of features to ensure accurate predictions:
+
+*   **General:** Company, Type Name, Inches, RAM, Operating System, Weight
+*   **Display:** Screen Resolution, Touchscreen, IPS Panel, Retina Display
+*   **Performance:** CPU Brand, Model, Clock Speed, GPU Company, GPU Model
+*   **Storage:** Primary & Secondary Storage (Size and Type)
+
+### Data Preprocessing
+
+A robust preprocessing pipeline was implemented to prepare the data for training:
+
+*   **Label Encoding:** Converted categorical features (e.g., Company, OS) into numerical values.
+*   **Feature Engineering:** Created new, informative features from existing ones (e.g., from screen resolution and CPU details).
+*   **Handling Missing Values:** Addressed null values through imputation or row removal to maintain data quality.
+
+---
+
+## 4. Deployment & User Interaction
+
+The final models are deployed in a Streamlit application that allows for seamless user interaction:
+
+1.  **Input:** The user enters laptop specifications into a simple form.
+2.  **Prediction:** Upon clicking "Submit," the application processes the data and feeds it to the models.
+3.  **Output:** The predicted price and recommended use-case are displayed clearly to the user.
+4.  **Reset:** A "Reset" button clears the form for a new analysis.
+
+---
+
+## 5. Conclusion
+
+This system successfully combines regression and classification to provide valuable pricing insights and practical usage guidance. The use of **Random Forest**, a powerful ensemble learning method, ensures model accuracy and reliability, while the Streamlit interface makes the complex analysis accessible and user-friendly.
 
 ## How to Run
 
